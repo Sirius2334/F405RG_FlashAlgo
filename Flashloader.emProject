@@ -1,7 +1,18 @@
 <!DOCTYPE CrossStudio_Project_File>
 <solution Name="Flashloader" target="8" version="2">
-  <configuration Name="Debug" />
-  <configuration Name="Release" />
+  <configuration
+    Name="Debug"
+    arm_architecture="v7EM"
+    arm_core_type="Cortex-M4"
+    c_preprocessor_definitions="USE_HAL_DRIVER;STM32F405xx"
+    c_user_include_directories=".;Core/Inc;Drivers/STM32F4xx_HAL_Driver/Inc;Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;Drivers/CMSIS/Device/ST/STM32F4xx/Include;Drivers/CMSIS/Include" />
+  <configuration
+    Name="Release"
+    arm_architecture="v7EM"
+    arm_core_type="Cortex-M4"
+    c_preprocessor_definitions="USE_HAL_DRIVER;STM32F405xx"
+    c_user_include_directories=".;Core/Inc;Drivers/STM32F4xx_HAL_Driver/Inc;Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;Drivers/CMSIS/Device/ST/STM32F4xx/Include;Drivers/CMSIS/Include"
+    gcc_debugging_level="None" />
   <project Name="FlashAlgorithm">
     <configuration
       Name="Common"

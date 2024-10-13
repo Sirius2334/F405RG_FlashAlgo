@@ -338,8 +338,14 @@ int ProgramPage(U32 DestAddr, U32 NumBytes, U8 *pSrcBuff) {
   //
   if (NumPages) {
     r = 0;
+  
+    /* If the previous operation is completed, proceed to program the new data */
+    CLEAR_BIT(FLASH->CR, FLASH_CR_PSIZE);
+    FLASH->CR |= FLASH_PSIZE_WORD;
+    FLASH->CR |= FLASH_CR_PG;
+
     do {
-      NumBytesAtOnce = (1 << PAGE_SIZE_SHIFT) >> 2;
+      NumBytesAtOnce = (1 << PAGE_SIZE_SHIFT) >> 3;
       _FeedWatchdog();
       //
       // Program one page
@@ -348,24 +354,26 @@ int ProgramPage(U32 DestAddr, U32 NumBytes, U8 *pSrcBuff) {
         //
         // Program page code
         //
-        while (__HAL_FLASH_GET_FLAG(FLASH_FLAG_BSY) != RESET)
+        while (__HAL_FLASH_GET_FLAG(FLASH_FLAG_BSY))
           ;
-
-        /* If the previous operation is completed, proceed to program the new data */
-        CLEAR_BIT(FLASH->CR, FLASH_CR_PSIZE);
-        FLASH->CR |= FLASH_PSIZE_WORD;
-        FLASH->CR |= FLASH_CR_PG;
 
         *(__IO uint32_t *)pDest++ = *pSrc++;
 
-        ///* Barrier to ensure programming is performed in 2 steps, in right order
-        //  (independently of compiler optimization behavior) */
-        //__ISB();
+        /* Barrier to ensure programming is performed in 2 steps, in right order
+          (independently of compiler optimization behavior) */
+        __ISB();
 
-        //*(__IO uint32_t *)pDest++ = *pSrc++;
+        *(__IO uint32_t *)pDest++ = *pSrc++;
 
       } while(--NumBytesAtOnce);
     } while (--NumPages);
+
+    /* Wait for last operation to be completed */
+    while (__HAL_FLASH_GET_FLAG(FLASH_FLAG_BSY))
+      ;
+
+    /* If the program operation is completed, disable the PG Bit */
+    FLASH->CR &= (~FLASH_CR_PG);
   }
   return r;
 }

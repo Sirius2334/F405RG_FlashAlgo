@@ -40,12 +40,14 @@
  <Files>
   <SessionOpenFile windowGroup="DockEditLeft" x="9" y="47" useTextEdit="1" path="Core/Src/system_stm32f4xx.c" left="0" top="25" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="34" y="77" useTextEdit="1" path="Src/FlashDev.c" left="0" top="49" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="40" y="66" useTextEdit="1" path="Src/FlashPrg.c" left="0" selected="1" top="53" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="8" y="351" useTextEdit="1" path="Src/FlashPrg.c" left="0" selected="1" top="330" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="20" y="16" useTextEdit="1" path="SystemConfig.c" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="22" y="6" useTextEdit="1" path="SystemConfig.h" left="0" top="0" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="832" useTextEdit="1" path="Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" left="0" top="839" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="30" y="832" useTextEdit="1" path="Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" left="0" top="832" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="46" y="2" useTextEdit="1" path="Setup/MemoryMap.xml" left="0" top="0" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="33" y="144" useTextEdit="1" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" left="0" top="120" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="31" y="143" useTextEdit="1" path="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" left="0" top="120" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="9" y="35" useTextEdit="1" path="Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" left="0" top="30" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="Flashloader" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Software/STM32/F405RG/FlashAlgo" debugSearchPath="" autoConnectCapabilities="3199"/>
+ <EMStudioWindow activeProject="FlashAlgorithm" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="D:/Software/STM32/F405RG/FlashAlgo" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>
